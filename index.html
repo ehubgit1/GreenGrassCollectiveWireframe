@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Grass Collective — Wireframe</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background: #fff;
+    color: #111;
+    line-height: 1.5;
+  }
+
+  /* Wireframe utility */
+  .wf-box {
+    border: 1.5px solid #aaa;
+    background: #f4f4f4;
+  }
+  .wf-box-dark {
+    border: 1.5px solid #aaa;
+    background: #ddd;
+  }
+  .wf-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+    margin-bottom: 6px;
+  }
+  .wf-placeholder {
+    border: 1.5px dashed #bbb;
+    background: #ececec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+  }
+  .wf-btn {
+    display: inline-block;
+    border: 1.5px solid #333;
+    padding: 10px 28px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    color: #111;
+  }
+  .wf-btn-fill {
+    background: #333;
+    color: #fff;
+  }
+  .wf-divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 0;
+  }
+  .wf-tag {
+    display: inline-block;
+    border: 1px solid #bbb;
+    padding: 3px 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #666;
+    background: #f0f0f0;
+  }
+  .wf-section-label {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #bbb;
+    border: 1px solid #ddd;
+    padding: 2px 8px;
+    background: #fff;
+  }
+
+  section {
+    position: relative;
+    padding: 60px 80px;
+    border-bottom: 2px solid #ccc;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  h1 { font-size: 52px; font-weight: 700; line-height: 1.05; margin-bottom: 20px; font-family: Georgia, serif; }
+  h2 { font-size: 32px; font-weight: 700; margin-bottom: 16px; font-family: Georgia, serif; }
+  h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; font-family: Georgia, serif; }
+  p  { color: #444; margin-bottom: 12px; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 520px;
+    background: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 40px;
+  }
+  #hero .hero-inner { max-width: 700px; }
+  #hero .logo-placeholder {
+    width: 320px;
+    height: 60px;
+    margin: 0 auto 32px;
+  }
+  #hero .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: #666; margin-bottom: 20px; }
+  #hero h1 { font-size: 58px; }
+  #hero p { font-size: 16px; max-width: 480px; margin: 0 auto 36px; }
+  #hero .hero-btns { display: flex; gap: 16px; justify-content: center; }
+
+  /* ─── ABOUT ─── */
+  #about .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  #about .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 36px;
+  }
+  #about .stat-box {
+    border-top: 2px solid #ccc;
+    padding-top: 14px;
+  }
+  #about .stat-num { font-size: 36px; font-weight: 700; font-family: Georgia, serif; }
+  #about .stat-lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #888; }
+  #about .quote-card {
+    border: 1.5px solid #bbb;
+    padding: 40px 36px;
+    background: #f0f0f0;
+    border-left: 4px solid #888;
+  }
+  #about .quote-card blockquote { font-size: 17px; font-style: italic; font-family: Georgia, serif; margin-bottom: 18px; color: #222; line-height: 1.6; }
+  #about .quote-card cite { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #777; font-style: normal; }
+
+  /* ─── SERVICES ─── */
+  #services .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+  }
+  #services .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+  #services .service-card {
+    border: 1.5px solid #ccc;
+    padding: 36px 28px;
+    background: #f7f7f7;
+  }
+  #services .service-num { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #aaa; margin-bottom: 16px; }
+  #services .service-icon-box {
+    width: 44px; height: 44px;
+    background: #ddd;
+    border: 1.5px solid #bbb;
+    margin-bottom: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  #services .service-features { list-style: none; margin-top: 16px; }
+  #services .service-features li {
+    font-size: 12px;
+    color: #777;
+    padding: 5px 0;
+    border-top: 1px solid #e0e0e0;
+  }
+  #services .event-card {
+    border: 1.5px solid #ccc;
+    padding: 36px 40px;
+    background: #f7f7f7;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+  }
+  #services .event-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 32px;
+    margin-top: 16px;
+    list-style: none;
+  }
+  #services .event-features li { font-size: 12px; color: #777; }
+
+  /* ─── PARALLAX BAND 1 ─── */
+  #band-1 {
+    background: #d8d8d8;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    border-bottom: 2px solid #ccc;
+  }
+  #band-1 .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: #666; margin-bottom: 16px; }
+  #band-1 h2 { font-size: 48px; }
+  #band-1 p { color: #555; max-width: 420px; margin: 12px auto 0; }
+
+  /* ─── WHO WE SERVE ─── */
+  #clients .clients-header { text-align: center; margin-bottom: 48px; }
+  #clients .clients-header p { max-width: 460px; margin: 12px auto 0; }
+  #clients .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  #clients .client-card {
+    border: 1.5px solid #ccc;
+    padding: 40px 28px;
+    background: #f7f7f7;
+    position: relative;
+  }
+  #clients .client-icon-box {
+    width: 52px; height: 52px;
+    background: #ddd;
+    border: 1.5px solid #bbb;
+    margin-bottom: 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+  }
+  #clients .client-card-num {
+    position: absolute; top: 18px; right: 20px;
+    font-size: 42px; font-weight: 700;
+    color: #e0e0e0;
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+
+  /* ─── PROCESS ─── */
+  #process .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    margin-top: 48px;
+  }
+  #process .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 36px; left: 9%;
+    width: 82%; height: 1px;
+    background: #bbb;
+  }
+  #process .process-step { padding: 0 20px; }
+  #process .step-circle {
+    width: 72px; height: 72px;
+    border: 1.5px solid #bbb;
+    border-radius: 50%;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 700;
+    font-family: Georgia, serif;
+    margin-bottom: 24px;
+    color: #333;
+  }
+
+  /* ─── PARALLAX BAND 2 ─── */
+  #band-2 {
+    background: #d0d0d0;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    border-bottom: 2px solid #ccc;
+  }
+  #band-2 blockquote {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+    max-width: 640px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  #band-2 cite { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #777; font-style: normal; }
+
+  /* ─── WORK ─── */
+  #work .work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 28px;
+  }
+  #work .work-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap: 3px;
+  }
+  #work .work-item:first-child { grid-row: span 2; }
+  #work .work-item {
+    border: 1.5px solid #bbb;
+    background: #e4e4e4;
+    position: relative;
+    overflow: hidden;
+  }
+  #work .work-item-content {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.85);
+    border-top: 1px solid #ccc;
+  }
+  #work .work-cat { font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: #888; margin-bottom: 4px; }
+  #work .work-title { font-size: 14px; font-weight: 700; }
+
+  /* ─── CTA ─── */
+  #cta {
+    background: #e8e8e8;
+    text-align: center;
+    padding: 80px 40px;
+    border-bottom: 2px solid #ccc;
+  }
+  #cta h2 { font-size: 44px; margin-bottom: 16px; }
+  #cta p { max-width: 480px; margin: 0 auto 36px; font-size: 16px; }
+  #cta .cta-btns { display: flex; gap: 16px; justify-content: center; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 60px 80px 32px;
+    border-top: 2px solid #ccc;
+  }
+  footer .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+  footer .footer-logo-placeholder {
+    width: 240px; height: 44px;
+    margin-bottom: 14px;
+  }
+  footer .footer-tagline { font-size: 13px; color: #555; margin-bottom: 14px; }
+  footer .footer-email { font-size: 12px; color: #333; }
+  footer .col-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: #888; margin-bottom: 14px; font-weight: 700; }
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: 8px; }
+  footer ul li a { font-size: 13px; color: #555; text-decoration: none; }
+  footer .footer-bottom {
+    border-top: 1px solid #ddd;
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer .copy { font-size: 11px; color: #aaa; }
+  footer .socials { display: flex; gap: 20px; }
+  footer .socials a { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #888; text-decoration: none; }
+
+  /* Redline annotations */
+  .annotation {
+    display: inline-block;
+    background: #ff4444;
+    color: #fff;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-left: 8px;
+    vertical-align: middle;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 800px) {
+    section { padding: 40px 20px; }
+    #about .about-grid,
+    #services .services-grid,
+    #clients .clients-grid,
+    #work .work-grid,
+    footer .footer-grid { grid-template-columns: 1fr; }
+    #process .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     SECTION 1 — HERO
+════════════════════════════════════════ -->
+<section id="hero">
+  <span class="wf-section-label">Section 1 — Hero</span>
+  <div class="hero-inner">
+
+    <!-- Logo -->
+    <div class="wf-placeholder logo-placeholder" style="width:320px;height:56px;margin:0 auto 28px;">
+      [ Logo — GreenGrassCollective wordmark ]
+    </div>
+
+    <!-- Eyebrow -->
+    <div class="eyebrow">— Golf Marketing Agency —</div>
+
+    <!-- Headline -->
+    <h1>Where <em>Brands</em> Find<br>Their Greenway</h1>
+
+    <!-- Subheading -->
+    <p>Premium marketing for golf courses, coaches, and the industry — built by people who understand the game.</p>
+
+    <!-- CTA Buttons -->
+    <div class="hero-btns">
+      <a href="#services" class="wf-btn wf-btn-fill">Explore Services</a>
+      <a href="#cta" class="wf-btn">Start a Project</a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div style="margin-top:48px; font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.15em;">
+      ↓ Scroll
+    </div>
+
+  </div>
+</section>
+
+<hr class="wf-divider">
+
+<!-- ═══════════════════════════════════════
+     SECTION 2 — ABOUT
+════════════════════════════════════════ -->
+<section id="about">
+  <span class="wf-section-label">Section 2 — About</span>
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Left: Copy + Stats -->
+      <div>
+        <div class="wf-label">Who We Are</div>
+        <h2>Marketing Built for the Green</h2>
+        <p>We're a specialized marketing agency with deep roots in golf culture. From championship courses to boutique academies, we craft campaigns that resonate with players, members, and enthusiasts.</p>
+        <p>Every brand in golf has a story worth telling — our job is to tell it beautifully, strategically, and memorably.</p>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-num">150+</div>
+            <div class="stat-lbl">Golf Brands Served</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">8</div>
+            <div class="stat-lbl">Years in the Industry</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">40M+</div>
+            <div class="stat-lbl">Social Impressions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">98%</div>
+            <div class="stat-lbl">Client Retention</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Testimonial Card -->
+      <div>
+        <div class="quote-card">
+          <blockquote>"They understood our course's character immediately and translated it into a brand that truly represents who we are."</blockquote>
+          <cite>— Director of Marketing, Prestige Golf Club</cite>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="wf-divider">
+
+<!-- ═══════════════════════════════════════
+     SECTION 3 — SERVICES
+════════════════════════════════════════ -->
+<section id="services">
+  <span class="wf-section-label">Section 3 — Services</span>
+  <div class="container">
+
+    <div class="services-header">
+      <div>
+        <div class="wf-label">What We Do</div>
+        <h2>Full-Spectrum Golf Marketing</h2>
+      </div>
+      <p style="max-width:260px; text-align:right; color:#666;">From tee-time to closing putt — we cover every touchpoint of your brand's journey.</p>
+    </div>
+
+    <!-- 6 Service Cards -->
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-icon-box">🎬</div>
+        <h3>Promotional Video</h3>
+        <p>Cinematic course tours, coaching reels, and event highlight films that captivate and convert.</p>
+        <ul class="service-features">
+          <li>Drone aerial footage</li>
+          <li>Player testimonials</li>
+          <li>Social media cuts</li>
+          <li>Brand storytelling films</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-icon-box">📱</div>
+        <h3>Social Media Content</h3>
+        <p>Consistent, high-quality content strategies that build communities and grow followings organically.</p>
+        <ul class="service-features">
+          <li>Monthly content calendars</li>
+          <li>Reel &amp; TikTok production</li>
+          <li>Community management</li>
+          <li>Performance analytics</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon-box">🏷️</div>
+        <h3>Brand Identity</h3>
+        <p>Logos, visual systems, and brand guidelines crafted to elevate your golf business above the competition.</p>
+        <ul class="service-features">
+          <li>Logo design &amp; variants</li>
+          <li>Color &amp; type systems</li>
+          <li>Brand guidelines doc</li>
+          <li>Merchandise design</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-icon-box">📸</div>
+        <h3>Photography</h3>
+        <p>Stunning course photography, coaching portraits, and event coverage that sets the scene.</p>
+        <ul class="service-features">
+          <li>Course landscape shoots</li>
+          <li>Coach &amp; pro headshots</li>
+          <li>Event &amp; tournament coverage</li>
+          <li>Lifestyle golf</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <div class="service-icon-box">💻</div>
+        <h3>Website Design</h3>
+        <p>Beautiful, conversion-optimized websites that turn visitors into members, students, and guests.</p>
+        <ul class="service-features">
+          <li>Custom design &amp; build</li>
+          <li>Tee-time integrations</li>
+          <li>SEO optimization</li>
+          <li>Mobile-first approach</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <div class="service-icon-box">📐</div>
+        <h3>Templates &amp; Print</h3>
+        <p>Ready-to-use social media templates and premium print materials — scorecards, brochures, signage and more.</p>
+        <ul class="service-features">
+          <li>Social media template packs</li>
+          <li>Scorecards &amp; yardage books</li>
+          <li>Promotional brochures</li>
+          <li>Event banners &amp; signage</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Event card — full width -->
+    <div class="event-card" style="margin-top:2px;">
+      <div style="min-width:180px;">
+        <div class="service-num">07</div>
+        <div class="service-icon-box">🏆</div>
+        <h3>Event Marketing</h3>
+      </div>
+      <div>
+        <p>From member-guest tournaments to pro-am events and charity scrambles, we handle the full marketing picture — digital campaigns, on-site materials, sponsor packages, and post-event content.</p>
+        <ul class="event-features">
+          <li>Pre-event digital campaigns</li>
+          <li>Sponsor decks &amp; packages</li>
+          <li>On-course signage &amp; programs</li>
+          <li>Live social coverage</li>
+          <li>Post-event recap videos</li>
+          <li>Email &amp; SMS campaigns</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     BAND — PARALLAX 1
+════════════════════════════════════════ -->
+<section id="band-1">
+  <span class="wf-section-label">Parallax Band 1</span>
+  <div>
+    <div class="eyebrow">— The 18th Hole Standard —</div>
+    <h2>Every Detail. Every Drive.</h2>
+    <p>We bring the same precision to your brand that your members bring to their game.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 4 — WHO WE SERVE
+════════════════════════════════════════ -->
+<section id="clients">
+  <span class="wf-section-label">Section 4 — Who We Serve</span>
+  <div class="container">
+
+    <div class="clients-header">
+      <div class="wf-label">Who We Serve</div>
+      <h2>The Full Spectrum of Golf</h2>
+      <p>Whether you're a municipal nine-hole or a private championship course, we have the expertise to grow your brand.</p>
+    </div>
+
+    <div class="clients-grid">
+
+      <div class="client-card">
+        <div class="client-card-num">01</div>
+        <div class="client-icon-box">⛳</div>
+        <h3>Golf Courses &amp; Clubs</h3>
+        <p>Private, semi-private, and public courses looking to attract new members, increase tee-time bookings, and elevate their reputation in the market.</p>
+        <span class="wf-tag">Courses &amp; Resorts</span>
+      </div>
+
+      <div class="client-card">
+        <div class="client-card-num">02</div>
+        <div class="client-icon-box">🏌️</div>
+        <h3>Golf Coaches &amp; Instructors</h3>
+        <p>Teaching pros, academies, and independent coaches building their personal brand to attract more students and establish authority in the instruction space.</p>
+        <span class="wf-tag">Coaches &amp; Academies</span>
+      </div>
+
+      <div class="client-card">
+        <div class="client-card-num">03</div>
+        <div class="client-icon-box">🏭</div>
+        <h3>Golf Industry Brands</h3>
+        <p>Equipment manufacturers, apparel brands, technology companies, and service providers looking to reach and resonate with the golf-passionate consumer.</p>
+        <span class="wf-tag">Brands &amp; Vendors</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="wf-divider">
+
+<!-- ═══════════════════════════════════════
+     SECTION 5 — PROCESS
+════════════════════════════════════════ -->
+<section id="process">
+  <span class="wf-section-label">Section 5 — Process</span>
+  <div class="container">
+    <div class="wf-label">Our Process</div>
+    <h2>How We Play</h2>
+
+    <div class="process-steps">
+
+      <div class="process-step">
+        <div class="step-circle">1</div>
+        <h3>Discovery</h3>
+        <p>We dig into your brand, goals, audience, and competitive landscape — no assumptions, all insight.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">2</div>
+        <h3>Strategy</h3>
+        <p>We build a bespoke marketing roadmap aligned to your objectives, season, and budget.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">3</div>
+        <h3>Creation</h3>
+        <p>Our creative team produces content, campaigns, and assets with exceptional attention to quality.</p>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">4</div>
+        <h3>Growth</h3>
+        <p>We launch, monitor, and optimize — continuously refining to drive meaningful, measurable results.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     BAND — PARALLAX 2
+════════════════════════════════════════ -->
+<section id="band-2">
+  <span class="wf-section-label">Parallax Band 2</span>
+  <div>
+    <blockquote>"Golf is the closest game to the game we call life. You get bad breaks from good shots; you get good breaks from bad shots — but you have to play the ball where it lies."</blockquote>
+    <cite>— Bobby Jones</cite>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 6 — WORK / PORTFOLIO
+════════════════════════════════════════ -->
+<section id="work">
+  <span class="wf-section-label">Section 6 — Selected Work</span>
+  <div class="container">
+
+    <div class="work-header">
+      <div>
+        <div class="wf-label">Our Work</div>
+        <h2>Selected Projects</h2>
+      </div>
+      <a href="#cta" class="wf-btn">View All Work</a>
+    </div>
+
+    <div class="work-grid">
+
+      <div class="work-item">
+        <div class="wf-placeholder" style="position:absolute;inset:0;font-size:13px;">[ Image Placeholder ]</div>
+        <div class="work-item-content">
+          <div class="work-cat">Brand Identity + Video</div>
+          <div class="work-title">Pinebrook Golf &amp; Country Club</div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="wf-placeholder" style="position:absolute;inset:0;font-size:13px;">[ Image ]</div>
+        <div class="work-item-content">
+          <div class="work-cat">Social Media</div>
+          <div class="work-title">Coach Marcus Reid</div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="wf-placeholder" style="position:absolute;inset:0;font-size:13px;">[ Image ]</div>
+        <div class="work-item-content">
+          <div class="work-cat">Photography</div>
+          <div class="work-title">Highlands Resort Course</div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="wf-placeholder" style="position:absolute;inset:0;font-size:13px;">[ Image ]</div>
+        <div class="work-item-content">
+          <div class="work-cat">Website Design</div>
+          <div class="work-title">Arcadia Golf Academy</div>
+        </div>
+      </div>
+
+      <div class="work-item">
+        <div class="wf-placeholder" style="position:absolute;inset:0;font-size:13px;">[ Image ]</div>
+        <div class="work-item-content">
+          <div class="work-cat">Event Marketing</div>
+          <div class="work-title">Pro-Am Charity Classic</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 7 — CTA
+════════════════════════════════════════ -->
+<section id="cta">
+  <span class="wf-section-label">Section 7 — CTA</span>
+  <div class="wf-label">Ready to Elevate Your Brand?</div>
+  <h2>Let's Build Something Remarkable</h2>
+  <p>Whether you're launching a new course, growing a coaching business, or refreshing your brand — we're ready to tee up your next chapter.</p>
+  <div class="cta-btns">
+    <a href="mailto:hello@greengrasscollective.com" class="wf-btn wf-btn-fill">Start a Conversation</a>
+    <a href="#services" class="wf-btn">Explore Services</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <span class="wf-section-label">Footer</span>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <div class="wf-placeholder footer-logo-placeholder">[ Logo ]</div>
+        <p class="footer-tagline">The golf industry's premier marketing partner. Helping courses, coaches, and brands grow their game since 2017.</p>
+        <div class="footer-email">hello@greengrasscollective.com</div>
+      </div>
+
+      <div>
+        <div class="col-title">Services</div>
+        <ul>
+          <li><a href="#services">Promotional Video</a></li>
+          <li><a href="#services">Social Media</a></li>
+          <li><a href="#services">Branding</a></li>
+          <li><a href="#services">Photography</a></li>
+          <li><a href="#services">Websites</a></li>
+          <li><a href="#services">Templates</a></li>
+          <li><a href="#services">Event Marketing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="col-title">Clients</div>
+        <ul>
+          <li><a href="#clients">Golf Courses</a></li>
+          <li><a href="#clients">Golf Coaches</a></li>
+          <li><a href="#clients">Industry Brands</a></li>
+          <li><a href="#clients">Golf Academies</a></li>
+          <li><a href="#clients">Golf Resorts</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="col-title">Company</div>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#cta">Contact</a></li>
+          <li><a href="#">Case Studies</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="copy">© 2025 Green Grass Collective. All rights reserved.</div>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">YouTube</a>
+        <a href="#">X / Twitter</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
